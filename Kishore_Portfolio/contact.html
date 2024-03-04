@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- *******  Link To CSS Style Sheet  ******* -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="shortcut icon" type="image/png" href="ic.png">
+   
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+	<!-- *******  Font Awesome Icons Link  ******* -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+	<script src="./files/script.js"></script>
+
+	<!-- *******  Link To Goggle Fonts  *******  -->
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,800;1,900&display=swap" rel="stylesheet">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        *{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+body{
+	width: 100%;
+	min-height: 100vh;
+	background-color: #2e2e2e;
+	color: white;
+}
+.container{
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 30px 8%;
+}
+.container .row{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	max-width: 1100px;
+}
+.row section.col{
+	display: flex;
+	flex-direction: column;
+}
+.row section.left{
+	flex-basis: 35%;
+	min-width: 320px;
+	margin-right: 60px;
+}
+.row section.right{
+	flex-basis: 60%;
+}
+section.left .contactTitle h2{
+	position: relative;
+	font-size: 28px;
+	color: #ddd;
+	display: inline-block;
+	margin-bottom: 25px;
+}
+section.left .contactTitle h2::before{
+	content: '';
+	position: absolute;
+	width: 50%;
+	height: 1px;
+	background-color: #888;
+	top: 120%;
+	left: 0;
+}
+section.left .contactTitle h2::after{
+	content: '';
+	position: absolute;
+	width: 25%;
+	height: 3px;
+	background-color: dodgerblue;
+	top: calc(120% - 1px);
+	left: 0;
+}
+section.left .contactTitle p{
+	font-size: 17px;
+	color: #ccc;
+	letter-spacing: 1px;
+	line-height: 1.2;
+	padding-bottom: 22px;
+}
+section.left .contactInfo{
+	margin-bottom: 16px;
+}
+.contactInfo .iconGroup{
+	display: flex;
+	align-items: center;
+	margin: 25px 0px;
+}
+.iconGroup .icon{
+	width: 45px;
+	height: 45px;
+	border: 2px solid dodgerblue;
+	border-radius: 50%;
+	margin-right: 20px;
+	position: relative;
+}
+.iconGroup .icon i{
+	font-size: 20px;
+	color: #ddd;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.iconGroup .details span{
+	display: block;
+	color: #888;
+	font-size: 18px;
+}
+.iconGroup .details span:nth-child(1){
+	text-transform: uppercase;
+	color: #ccc;
+}
+section.left .socialMedia{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 22px 0px 20px;
+}
+.socialMedia a{
+	width: 35px;
+	height: 35px;
+	text-decoration: none;
+	text-align: center;
+	margin-right: 15px;
+	border-radius: 5px;
+	background-color: dodgerblue;
+	transition: 0.4s;
+}
+.socialMedia a i{
+	color: #ddd;
+	font-size: 18px;
+	line-height: 35px;
+	border: 1px solid transparent;
+	transition-delay: 0.4s;
+}
+.socialMedia a:hover{
+	transform: translateY(-5px);
+	background-color: #2e2e2e;
+	color: dodgerblue;
+	border: 1px solid dodgerblue;
+}
+.socialMedia a:hover i{
+	color: dodgerblue;
+}
+
+/* Code for the right section (column) */
+
+.row section.right .messageForm{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding-top: 30px;
+}
+.row section.right .inputGroup{
+	margin: 18px 0px;
+	position: relative;
+}
+.messageForm .halfWidth{
+	flex-basis: 48%;
+}
+.messageForm .fullWidth{
+	flex-basis: 100%;
+}
+.messageForm input, .messageForm textarea{
+	width: 100%;
+	font-size: 18px;
+	padding: 2px 0px;
+	background-color: #2e2e2e;
+	color: #ddd;
+	border: none;
+	border-bottom: 2px solid #666;
+	outline: none;
+}
+.messageForm textarea{
+	resize: none;
+	height: 220px;
+	display: block;
+}
+textarea::-webkit-scrollbar{
+	width: 5px;
+}
+textarea::-webkit-scrollbar-track{
+	background-color: #1e1e1e;
+	border-radius: 15px;
+}
+textarea::-webkit-scrollbar-thumb{
+	background-color: dodgerblue;
+	border-radius: 15px;
+}
+.inputGroup label{
+	position: absolute;
+	left: 0;
+	bottom: 4px;
+	color: #888;
+	font-size: 18px;
+	transition: 0.4s;
+	pointer-events: none;
+}
+.inputGroup:nth-child(4) label{
+	top: 2px;
+}
+.inputGroup input:focus ~ label, .inputGroup textarea:focus ~ label,
+.inputGroup input:valid ~ label, .inputGroup textarea:valid ~ label
+{
+	transform: translateY(-30px);
+	font-size: 16px;
+}
+.inputGroup button{
+	padding: 8px 16px;
+	font-size: 18px;
+	background-color: dodgerblue;
+	color: #ddd;
+	border: 1px solid transparent;
+	border-radius: 25px;
+	outline: none;
+	cursor: pointer;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+	transition: 0.4s;
+}
+.inputGroup button:hover{
+	background-color: #2e2e2e;
+	color: dodgerblue;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+	border: 1px solid dodgerblue;
+}
+@media(max-width: 1100px){
+	.messageForm .halfWidth{
+		flex-basis: 100%;
+	}
+}
+@media(max-width: 900px){
+	.container .row{
+		flex-wrap: wrap;
+	}
+	.row section.left, .row section.right{
+		flex-basis: 100%;
+		margin: 0px;
+	}
+
+  
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 17px 10%;
+    background: #252525;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.logo {
+    position: relative;
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default;
+    letter-spacing: 5px;
+	animation: slideRight 1s ease forwards;
+}
+
+.navbar a {
+    display: inline-block;
+    font-size: 22px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+    animation: slideUP .8s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.navbar a:hover {
+    color: #0ef;
+    text-decoration: underline;
+}
+
+@keyframes animate-path1 {
+    100% {
+        stroke-dashoffset: 180;
+    }
+}
+
+@keyframes animate-path2 {
+    100% {
+        stroke-dashoffset: 140;
+    }
+}
+
+@keyframes animate-path3 {
+    100% {
+        stroke-dashoffset: 90;
+    }
+}
+
+@keyframes animate-path4 {
+    100% {
+        stroke-dashoffset: 50;
+    }
+}
+
+@keyframes animate-bar {
+    100% {
+        stroke-dashoffset: -1;
+    }
+}
+
+@keyframes showText {
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes animate {
+
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUP {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 700px) and (min-width: 400px) {
+    *{
+        overflow-x: hidden;
+        overflow-y: inherit;
+    }
+    /*navbar*/
+    .header{
+        display:block;
+        
+    }
+    .logo {
+        position: relative;
+        font-size: 20px;
+        font-weight: 500;
+        text-align: center;
+    }
+    .logo::after{
+        content: "\a";
+        white-space: pre;
+    }
+    .navbar a {
+        font-size: 15px;
+        font-weight: 200;
+        margin-left: 0px;
+        padding: 10px 10px 0 0;
+    }
+    .navbar a::after{
+        content: "\a";
+        white-space: pre;
+    }
+
+    /*home*/
+    .home{
+        align-items: normal;
+        padding-top: 40%;
+        padding-bottom: 0;
+    }
+    .home-content h1 {
+        font-size: 40px;
+        font-weight: 600;
+    }
+    
+    .home-content h3 {
+        font-size: 30px;
+        font-weight: 300;
+    }
+    
+    .home-content h4 {
+        font-size: 18px;
+        font-weight: 200;
+    }
+    
+    .home-content h4 span {
+        font-size: 18px;
+        font-weight: 200;
+    }
+    .img{
+        max-width: 400px;
+        position: relative;
+        left: -10%;
+        top: 2%;
+        padding-bottom: 30px;
+        padding-left: 0;
+        margin-left: 0;
+    }
+    .btn-box:hover {
+        box-shadow: 0 0 5px cyan, 0 0 10px cyan, 0 0 15pc cyan, 0 0 20px cyan, 0 0 25px cyan;
+    }
+    /*about*/
+    .about{
+        padding-bottom: 20px;
+        min-height: auto;
+    }
+    .about-text h2 {
+        font-size: 30px;
+        letter-spacing: 5px;
+    }
+    
+    .about-text p {
+        font-size: 15px;
+        line-height: normal;
+        letter-spacing: 1px;
+        margin-bottom: 4rem;
+        text-align: left;
+    }
+    .abtbtn-box:hover {
+        box-shadow: 0 0 5px cyan, 0 0 10px cyan, 0 0 15pc cyan, 0 0 20px cyan, 0 0 25px cyan;
+    }
+
+    /*skills*/
+    .subtitle{
+        font-size: 50px;
+        text-align: center;
+    }
+    .container1 {
+        width: 600px;
+        max-height: 500px;
+        padding: 20px;
+        margin-left: 50px;
+    }
+    .container2 {
+        width: 600px;
+        max-height: 500px;
+        padding: 10px;
+        margin-left: 0px;
+    }
+    .bar .info .addhtml::before{
+        content: "90%";
+    }
+    .bar .info .addcss::before{
+        content: "80%";
+    }
+    .bar .info .addpy::before{
+        content: "75%";
+    }
+    .bar .info .addjava::before{
+        content: "50%";
+    }
+    .bar .info .addc::before{
+        content: "50%";
+    }
+
+    /*project*/
+    .main-text {
+        padding-top: 20px;
+        margin-top: 10px;
+        padding-bottom: 50px;
+    }
+    .main-text h2 {
+        font-size: 50px;
+        padding-bottom: 15px;
+    }
+    .layer p {
+        line-height: normal;
+    }
+    /*service*/
+    .sub-title {
+        font-size: 50px;
+        padding-bottom: 50px;
+    }
+    .prj-list div{
+        padding: 20px;
+    }
+    /*contact*/
+    .contacts h2{
+        font-size: 50px;
+    }
+    .contact-list i{
+        font-size: 15px;
+        padding: 5px 5px 0 0;
+    }
+    
+    .top{
+        position: fixed;
+        bottom: 2rem;
+        left: 1rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        opacity: 0;
+        transition: all .4s;
+    }
+    
+}
+
+@media (max-width: 400px) {
+    *{
+        overflow-x: hidden;
+    }
+    .header{
+        display:block;
+    }
+    .logo {
+        position: relative;
+        font-size: 20px;
+        font-weight: 500;
+        text-align: center;
+    }
+    .logo::after{
+        content: "\a";
+        white-space: pre;
+    }
+    .navbar a {
+        font-size: 13px;
+        font-weight: 200;
+        margin-left: 0px;
+        padding: 10px 4px 0 0;
+    }
+    .navbar a::after{
+        content: "\a";
+        white-space: pre;
+    }
+}
+
+    /*home*/
+    .home{
+        width: 100%;
+        align-items: normal;
+        padding-top: 40%;
+        padding-bottom: 0;
+    }
+    .home-content h1 {
+        font-size: 30px;
+        font-weight: 600;
+    }
+    
+    .home-content h3 {
+        font-size: 20px;
+        font-weight: 300;
+    }
+    
+    .home-content h4 {
+        font-size: 15px;
+        font-weight: 200;
+    }
+    
+    .home-content h4 span {
+        font-size: 15px;
+        font-weight: 200;
+    }
+    .btn-box:hover {
+        box-shadow: 0 0 5px cyan, 0 0 10px cyan, 0 0 15pc cyan, 0 0 20px cyan, 0 0 25px cyan;
+    }
+    .img{
+        max-width: 300px;
+        position: relative;
+        left: -10%;
+        top: 2%;
+        padding-bottom: 30px;
+        padding-left: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    /*about*/
+    .about{
+        padding-bottom: 20px;
+        min-height: auto;
+    }
+    .about-text h2 {
+        font-size: 30px;
+        letter-spacing: 5px;
+    }
+    
+    .about-text p {
+        font-size: 15px;
+        line-height: normal;
+        letter-spacing: 0px;
+        margin-bottom: 4rem;
+        text-align: left;
+    }
+    .abtbtn-box:hover {
+        box-shadow: 0 0 5px cyan, 0 0 10px cyan, 0 0 15pc cyan, 0 0 20px cyan, 0 0 25px cyan;
+    }
+
+    /*skills*/
+    .subtitle{
+        font-size: 50px;
+        text-align: center;
+    }
+    .container1 {
+        width: 600px;
+        max-height: 500px;
+        padding: 20px;
+        margin-left: 50px;
+    }
+    .container2 {
+        width: 600px;
+        max-height: 500px;
+        padding: 10px;
+        margin-left: 0px;
+    }
+    .radial-bar .text{
+        left: 25%;
+    }
+    .bar .info .addhtml::before{
+        content: "90%";
+    }
+    .bar .info .addcss::before{
+        content: "80%";
+    }
+    .bar .info .addpy::before{
+        content: "75%";
+    }
+    .bar .info .addjava::before{
+        content: "50%";
+    }
+    .bar .info .addc::before{
+        content: "50%";
+    }
+
+    /*project*/
+    .main-text {
+        padding-top: 20px;
+        margin-top: 10px;
+        padding-bottom: 50px;
+    }
+    .main-text h2 {
+        font-size: 50px;
+        padding-bottom: 15px;
+    }
+    .layer p {
+        line-height: normal;
+    }
+
+    /*service*/
+    .sub-title {
+        font-size: 50px;
+        padding-bottom: 50px;
+    }
+
+    /*contact*/
+    .contacts h2{
+        font-size: 50px;
+    }
+    .contact-list i{
+        font-size: 13px;
+        padding: 5px 5px 0 0;
+    }
+    
+    .top{
+        position: fixed;
+        bottom: 2rem;
+        left: 1rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        opacity: 0;
+        transition: all .4s;
+    }
+    .top i{
+        color: #000;
+    }
+
+	.contact-form input[type="submit"] {
+    background-color: #0ef;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+
+
+
+
+
+    </style>
+
+	<title>Contact Section</title>
+</head>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo">Portfolio</a>
+        <nav class="navbar" id="myLinks">
+            <a href="index.html" style="--i:1">Home</a>
+            <a href="about.html" style="--i:2">About</a>
+            <a href="portfolio.html" style="--i:3" class="active">Portfolio</a>
+            <a href="contact.html" style="--i:4">Contact</a>
+            <!--a href="blog.html" style="--i:5">Blog</a-->
+        </nav>
+    </header>
+
+
+
+	<div class="container">
+		<main class="row">
+			
+			<!--  *******   Left Section (Column) Starts   *******  -->
+
+			<section class="col left">
+				
+				<!--  *******   Title Starts   *******  -->
+
+				<div class="contactTitle">
+					<h2>Get In Touch with Me</h2>
+					<!--p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p-->
+				</div>
+
+				<!--  *******   Title Ends   *******  -->
+
+				<!--  *******   Contact Info Starts   *******  -->
+
+				<div class="contactInfo">
+					
+					<div class="iconGroup">
+						<div class="icon">
+							<i class="fa-solid fa-phone"></i>
+						</div>
+						<div class="details">
+							<span>Phone</span>
+							<span>+94 77 504 4578</span>
+						</div>
+					</div>
+
+					<div class="iconGroup">
+						<div class="icon">
+							<i class="fa-solid fa-envelope"></i>
+						</div>
+						<div class="details">
+							<span>Email</span>
+							<span>vkisho25@gmail.com</span>
+						</div>
+					</div>
+
+					<div class="iconGroup">
+						<div class="icon">
+							<i class="fa-solid fa-location-dot"></i>
+						</div>
+						<div class="details">
+							<span>Location</span>
+							<span>283/21, Near Iyanar Temple, Chunnakam</span>
+						</div>
+					</div>
+
+				</div>
+
+				<!--  *******   Contact Info Ends   *******  -->
+
+				<!--  *******   Social Media Starts   *******  -->
+
+				<div class="socialMedia">
+					<a href="https://www.facebook.com/kishore.vale"><i class="fa-brands fa-facebook-f"></i></a>
+					<a href="https://www.instagram.com/ki.shore6170?igsh=ZDcyM3A0dWR6am42"><i class="fa-brands fa-instagram"></i></a>
+					<a href="https://www.linkedin.com/in/valethanchan-krishnakishore-5aba32247?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BhGtWa0ZmTPe%2BceYWOHl6Mg%3D%3D"><i class="fa-brands fa-linkedin-in"></i></a>
+				</div>
+
+				<!--  *******   Social Media Ends   *******  -->
+
+			</section>
+
+			<!--  *******   Left Section (Column) Ends   *******  -->
+
+			<!--  *******   Right Section (Column) Starts   *******  -->
+
+			<section class="col right">
+				
+				<!--  *******   Form Starts   *******  -->
+
+				<form class="messageForm">
+					
+					<div class="inputGroup halfWidth">
+						<input type="text" name="" required="required">
+						<label>Your Name</label>
+					</div>
+
+					<div class="inputGroup halfWidth">
+						<input type="email" name="" required="required">
+						<label>Email</label>
+					</div>
+
+					<div class="inputGroup fullWidth">
+						<input type="text" name="" required="required">
+						<label>Subject</label>
+					</div>
+
+					<div class="inputGroup fullWidth">
+						<textarea required="required"></textarea>
+						<label>Say Something</label>
+					</div>
+
+					<div class="inputGroup fullWidth">
+						<button>Send Message</button>
+					</div>
+
+				</form>
+
+				<!--  *******   Form Ends   *******  -->
+			</section>
+
+			<!--  *******   Right Section (Column) Ends   *******  -->
+
+		</main>
+	</div>
+
+    <a href="#Home" class="top"><i class='bx bx-up-arrow-alt' ></i></a>
+   
+</body>
+</html>
